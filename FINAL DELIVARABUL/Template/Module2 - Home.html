@@ -1,0 +1,59 @@
+<DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Rainfall prediction</title>
+
+</head>
+<style>
+   body{
+
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+   }
+   block{
+      margin-left: 300px;
+      text-align: center;
+      background-color: gray;
+      color: white;
+      border: 1px solid black;
+      width: fit-content;
+   }
+</style>
+<body background="https://wallpaperaccess.com/full/701614.jpg" text="black">
+
+    <div class="login">
+         <center><h1>Rainfall Prediction</h1></center>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url for ('predict')}}"method="post">
+
+    <block>
+    <P>Mintemp<input typ="text" placeholder="Min temp"name="MinTemp" ></P>
+             <P>Maxtemp<input typ="text" placeholder="Max temp"name="MaxTemp" ></p>
+             <p>Rainfall<input typ="text" placeholder="Rainfall"name="	Rainfall" ></p>
+             <P>WindGustSpeed<input typ="text" placeholder="WindGustSpeed" name="WindGustSpeed"></P>
+
+             <p>WindSpeed9am<input typ="text" placeholder="WindSpeed9am" name="WindSpeed9am"></p>
+
+             <p>WindSpeed3pm<input typ="text" placeholder="WindSpeed3pm" name="WindSpeed3pm"></p>
+
+             <P>Humidity9am<input typ="text"  placeholder="Humidity9am"name="Humidity9am" ></P>
+             <p>Humidity3pm<input typ="text" placeholder="Humidity3pm" name="Humidity3pm"></p>
+            <P>Pressure9am<input type="text"  placeholder="Pressure 9am" name="Pressure9am"></P>
+            <P>Pressure3pm<input type="text"  placeholder="Pressure 9am" name="Pressure3pm"></P>
+             <P>Temp9am<input type="text"  placeholder="Temp9am" name="	Temp9am"></P>
+             <P>Temp3pm<input type="text" placeholder="Temp3pm" name="Temp3pm"></P>
+             <P>RainToday_No<input type="number" name="RainToday_No"></P>
+             <p>RainToday_Yes<input type="number" name="RainToday_Yes"></p>
+    </block>
+             <br><br><button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px;margin-left: 600px;cursor: pointer;">Predict</button>
+             </form>
+            <br>
+            <p style="margin-left: 600px;background-color:black; color:white;width: fit-content;">{{ predictiontext }}</p>
+          </div>
+</body>
+</html>        
